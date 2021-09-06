@@ -1,14 +1,41 @@
+// @ts-ignore
+//@ts-nocheck
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, Platform } from 'react-native';
+import { AdMobInterstitial, AdMobBanner } from 'expo-ads-admob';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+//ANDROID BANNER: ca-app-pub-7383631686274743/9539129543
+//ANDROID INTER: ca-app-pub-7383631686274743/1637971684
+//IOS BANNER: ca-app-pub-7383631686274743/7006133848
+//IOS INTER: ca-app-pub-7383631686274743/8693145254
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.bannerAdId =
+      Platform.OS === 'ios'
+        ? 'ca-app-pub-7383631686274743/7006133848'
+        : 'ca-app-pub-7383631686274743/9539129543';
+    this.insterstitialAdId =
+      Platform.OS === 'ios'
+        ? 'ca-app-pub-7383631686274743/8693145254'
+        : 'ca-app-pub-7383631686274743/1637971684';
+  }
+
+  async componentDidMount() {
+    AdMobInterstitial.setAdUnitID(this.insterstitialAdId);
+    await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: false });
+    await AdMobInterstitial.showAdAsync;
+  }
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>Truco</Text>
+        <AdMobBanner bannerAdId="banner" adUnitID={this.bannerAdId} servePersonalizedAds={false} />
+        <StatusBar style="auto" />
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
