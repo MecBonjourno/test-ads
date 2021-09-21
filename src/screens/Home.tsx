@@ -20,29 +20,29 @@ export default function HomeScreen({ navigation }) {
     colorScheme === 'light' ? styles.lightContainer : styles.darkContainer;
 
   const [carta, setCarta] = useState<Carta>();
-
-  let arrayOfCards = CARDS.map((card: any) => card);
+  const [deck, setDeck] = useState(CARDS.map((card: any) => card));
 
   function removeCard() {
-    for (let i = 0; (i = arrayOfCards.length); i++) {
-      console.log('Index da carta selecionada: ' + arrayOfCards.indexOf(carta));
-      const index = arrayOfCards.indexOf(carta);
-      if (index > -1) {
-        arrayOfCards.splice(index, 1);
-        console.log('Quantidade de cartas pós pick: ' + arrayOfCards.length);
-      }
+    console.log('Index da carta selecionada: ' + deck.indexOf(carta));
+
+    const index = deck.indexOf(carta);
+    if (index > -1) {
+      deck.splice(index, 1);
+      // setDeck(
+      //   deck.filter(item => {
+      //     return item !== carta;
+      //   })
+      // );
+      console.log('Quantidade de cartas pós pick: ' + deck.length);
     }
   }
 
   function pickCard() {
-    console.log('\nQuantidade de cartas pré pick: ' + arrayOfCards.length);
-    const getOneCard = arrayOfCards[Math.floor(Math.random() * arrayOfCards.length)];
+    console.log('\nQuantidade de cartas pré pick: ' + deck.length);
+    const getOneCard = deck[Math.floor(Math.random() * deck.length)];
     setCarta(getOneCard);
+    removeCard();
   }
-
-  useEffect(() => {
-    pickCard();
-  }, []);
 
   return (
     <View style={[styles.container, themeContainerStyle]}>
