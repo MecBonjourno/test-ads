@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "truco",
-    "slug": "truco",
-    "version": "1.0.0",
+    "name": "Sueca",
+    "slug": "Sueca",
+    "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
