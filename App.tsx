@@ -35,7 +35,7 @@ function AppTabs() {
 
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home-outline';
-          } else if (route.name === 'Settings') {
+          } else if (route.name === 'Ajustes') {
             iconName = focused ? 'settings-sharp' : 'settings-outline';
           }
 
@@ -72,7 +72,7 @@ function AppTabs() {
         options={{
           headerShown: false,
         }}
-        name="Settings"
+        name="Ajustes"
         component={Settings}
       />
     </Tab.Navigator>
@@ -129,14 +129,14 @@ export default class App extends Component {
   render() {
     return (
       <NavigationContainer>
+        <StatusBar barStyle="light-content" />
         <Stack.Navigator>
           <Stack.Screen options={{ headerShown: false }} name="Landing" component={Landing} />
           <Stack.Screen
             options={{
+              headerStyle: { backgroundColor: 'transparent' },
               headerTitle: () => <Text>Sueca!</Text>,
-              headerRight: () => (
-                <Button onPress={() => alert('This is a button!')} title="Info" color="#00cc00" />
-              ),
+              headerRight: () => <Ionicons name="menu" size={28} />,
             }}
             name="App"
             component={AppTabs}
