@@ -131,7 +131,16 @@ export default class App extends Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen options={{ headerShown: false }} name="Landing" component={Landing} />
-          <Stack.Screen options={{ headerShown: false }} name="App" component={AppTabs} />
+          <Stack.Screen
+            options={{
+              headerTitle: () => <Text>Sueca!</Text>,
+              headerRight: () => (
+                <Button onPress={() => alert('This is a button!')} title="Info" color="#00cc00" />
+              ),
+            }}
+            name="App"
+            component={AppTabs}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     );

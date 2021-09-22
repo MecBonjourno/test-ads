@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Text, View, StyleSheet, useColorScheme } from 'react-native';
+import { Button, Text, View, StyleSheet, useColorScheme, SafeAreaView } from 'react-native';
+import { useFonts, Roboto_400Regular, Roboto_500Medium } from '@expo-google-fonts/roboto';
 import AdBanner from '../components/AdBanner';
 import { CARDS } from '../utils/CARDS';
 import { RULES } from '../utils/RULES';
@@ -13,6 +14,10 @@ interface Carta {
 }
 
 export default function HomeScreen({ navigation }) {
+  let [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_500Medium,
+  });
   const colorScheme = useColorScheme();
 
   const themeTextStyle = colorScheme === 'light' ? styles.lightThemeText : styles.darkThemeText;
@@ -23,42 +28,41 @@ export default function HomeScreen({ navigation }) {
   const [deck, setDeck] = useState(CARDS.map((card: any) => card));
 
   function removeCard() {
-    console.log('Index da carta selecionada: ' + deck.indexOf(carta));
-
     const index = deck.indexOf(carta);
     if (index > -1) {
       deck.splice(index, 1);
-      // setDeck(
-      //   deck.filter(item => {
-      //     return item !== carta;
-      //   })
-      // );
-      console.log('Quantidade de cartas pós pick: ' + deck.length);
     }
   }
 
   function pickCard() {
-    console.log('\nQuantidade de cartas pré pick: ' + deck.length);
     const getOneCard = deck[Math.floor(Math.random() * deck.length)];
     setCarta(getOneCard);
     removeCard();
   }
 
-  return (
-    <View style={[styles.container, themeContainerStyle]}>
-      <Text style={[styles.text, themeTextStyle]}>Sueca!</Text>
-      {carta && (
-        <View>
-          <Text style={[styles.text, themeTextStyle]}>{carta.name}</Text>
-          <Text style={[styles.text, themeTextStyle]}>{carta.rule}</Text>
-        </View>
-      )}
-      <Button title="Pick a Card" onPress={() => pickCard()} />
-      <View style={styles.BannerFooter}>
-        <AdBanner />
+  if (!fontsLoaded) {
+    return (
+      <View>
+        <Text>Loading...</Text>
       </View>
-    </View>
-  );
+    );
+  } else {
+    return (
+      <SafeAreaView style={[styles.container, themeContainerStyle]}>
+        <Text style={styles.Title}>Sueca!</Text>
+        {carta && (
+          <View>
+            <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>{carta.name}</Text>
+            <Text style={[styles.text, themeTextStyle]}>{carta.rule}</Text>
+          </View>
+        )}
+        <Button title="Pick a Card" onPress={() => pickCard()} />
+        <View style={styles.BannerFooter}>
+          <AdBanner />
+        </View>
+      </SafeAreaView>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -78,6 +82,10 @@ const styles = StyleSheet.create({
   },
   darkThemeText: {
     color: '#d0d0c0',
+  },
+  Title: {
+    fontFamily: 'Roboto_500Medium',
+    fontSize: 70,
   },
   BannerFooter: {
     position: 'absolute',
