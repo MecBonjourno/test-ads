@@ -61,9 +61,9 @@ export default function HomeScreen({ navigation }) {
         <LinearGradient colors={['#10700c', '#332d2d']} style={{ flex: 1 }}>
           <Text style={styles.Title}>Sueca!</Text>
           {carta && (
-            <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+            <View style={styles.Card}>
               <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>{carta.name}</Text>
-              <Text style={[styles.text, themeTextStyle]}>{carta.rule}</Text>
+              <Text style={{ fontFamily: 'Roboto_400Regular', fontSize: 40 }}>{carta.rule}</Text>
             </View>
           )}
           <View style={{ alignItems: 'center', justifyContent: 'center' }}>
@@ -83,8 +83,8 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // alignItems: 'center',
-    // justifyContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   lightContainer: {
     backgroundColor: '#d0d0c0',
@@ -125,5 +125,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     letterSpacing: 0.25,
     color: 'white',
+  },
+  Card: {
+    borderRadius: 25,
+    marginHorizontal: '3%',
+    marginVertical: '3%',
+    height: '65%',
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
