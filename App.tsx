@@ -3,17 +3,19 @@
 import { StatusBar } from 'expo-status-bar';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Platform, Button } from 'react-native';
+import { StyleSheet, Text, View, Platform, Button, Pressable } from 'react-native';
 import { AdMobBanner, AdMobInterstitial, AdMobRewarded, PublisherBanner } from 'expo-ads-admob';
-import Home from './src/screens/Home';
+import Jogo from './src/screens/Home';
 import Ads from './src/screens/Ads';
-import Finance from './src/screens/Finance';
+import Loja from './src/screens/Loja';
 import Settings from './src/screens/Settings';
 import DarkMode from './src/screens/DarkMode';
-import Landing from './src/screens/Landing';
+import Profile from './src/screens/Profile';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { DrawerContent } from './src/screens/DrawerContent';
 
 //ANDROID BANNER: ca-app-pub-6389475776142036/3825275035
 //ANDROID INTER: ca-app-pub-6389475776142036/2512193368
@@ -25,6 +27,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Stack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
+
+const Drawer = createDrawerNavigator();
 
 function AppTabs() {
   return (
@@ -66,7 +70,7 @@ function AppTabs() {
           headerShown: false,
         }}
         name="Home"
-        component={Home}
+        component={Jogo}
       />
       <Tab.Screen
         options={{
@@ -78,6 +82,20 @@ function AppTabs() {
     </Tab.Navigator>
   );
 }
+
+// function DrawerTabs() {
+//   return (
+//     <Drawer.Navigator initialRouteName="Home">
+//       <Drawer.Screen name="Home" component={HomeScreen} />
+//       <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+//     </Drawer.Navigator>
+//   );
+// }
+
+// function OpenDrawer({ navigation }) {
+//   console.log('OpenDrawer');
+//   navigation.toggleDrawer();
+// }
 export default class App extends Component {
   state = {
     disableInterstitialBtn: false,
@@ -129,19 +147,26 @@ export default class App extends Component {
   render() {
     return (
       <NavigationContainer>
-        <StatusBar barStyle="light-content" />
-        <Stack.Navigator>
+        {/* <Stack.Navigator>
           <Stack.Screen options={{ headerShown: false }} name="Landing" component={Landing} />
           <Stack.Screen
             options={{
               headerStyle: { backgroundColor: 'transparent' },
               headerTitle: () => <Text>Sueca!</Text>,
-              headerRight: () => <Ionicons name="menu" size={28} />,
+              headerRight: () => (
+                <Button title="Open" onPress={() => OpenDrawer()} />
+              ),
             }}
             name="App"
             component={AppTabs}
           />
-        </Stack.Navigator>
+        </Stack.Navigator> */}
+        <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
+          <Drawer.Screen name="Jogo" component={Jogo} />
+          <Drawer.Screen name="Settings" component={Settings} />
+          <Drawer.Screen name="Profile" component={Profile} />
+          <Drawer.Screen name="Loja" component={Loja} />
+        </Drawer.Navigator>
       </NavigationContainer>
     );
   }

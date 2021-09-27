@@ -19,12 +19,17 @@ export default function Settings({ navigation }) {
     colorScheme === 'light' ? styles.lightContainer : styles.darkContainer;
 
   return (
-    <SafeAreaView style={[styles.container, themeContainerStyle]}>
-      <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Settings</Text>
-      <View style={styles.BannerFooter}>
-        <AdBanner />
-      </View>
-    </SafeAreaView>
+    <View style={[styles.container, themeContainerStyle]}>
+      <LinearGradient colors={['#10700c', '#0a5a0e']} style={{ flex: 1 }}>
+        <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Account</Text>
+        <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Color</Text>
+        <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Deck</Text>
+        <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Subscription</Text>
+        <View style={styles.BannerFooter}>
+          <AdBanner />
+        </View>
+      </LinearGradient>
+    </View>
   );
 }
 
@@ -38,7 +43,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#d0d0c0',
   },
   darkContainer: {
-    backgroundColor: '#332d2d',
+    backgroundColor: '#0a5a0e',
   },
   lightThemeText: {
     color: '#242c40',
@@ -73,5 +78,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     letterSpacing: 0.25,
     color: 'white',
+  },
+  BannerFooter: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
 });

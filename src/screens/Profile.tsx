@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Text, View, StyleSheet, useColorScheme } from 'react-native';
 import AdBanner from '../components/AdBanner';
 
-export default function Landing({ navigation }) {
+export default function Profile({ navigation }) {
   const colorScheme = useColorScheme();
 
   const themeTextStyle = colorScheme === 'light' ? styles.lightThemeText : styles.darkThemeText;
@@ -11,7 +11,7 @@ export default function Landing({ navigation }) {
 
   return (
     <View style={[styles.LandingContainer, themeContainerStyle]}>
-      <Text style={[styles.text, themeTextStyle]}>Bem vindo de volta a Sueca!</Text>
+      <Text style={[styles.text, themeTextStyle]}>Profile</Text>
       <Button title="Jogar!" onPress={() => navigation.navigate('App')} />
       <View style={styles.BannerFooter}>
         <AdBanner />

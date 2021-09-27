@@ -58,7 +58,7 @@ export default function HomeScreen({ navigation }) {
   } else {
     return (
       <SafeAreaView style={[styles.container, themeContainerStyle]}>
-        <LinearGradient colors={['#10700c', '#332d2d']} style={{ flex: 1 }}>
+        <LinearGradient colors={['#10700c', '#0a5a0e']} style={{ flex: 1 }}>
           <Text style={styles.Title}>Sueca!</Text>
           {carta && (
             <View style={styles.Card}>
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#d0d0c0',
   },
   darkContainer: {
-    backgroundColor: '#332d2d',
+    backgroundColor: '#0a5a0e',
   },
   lightThemeText: {
     color: '#242c40',
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
   Card: {
     borderRadius: 25,
     marginHorizontal: '3%',
-    marginVertical: '3%',
+    marginBottom: '5%',
     height: '65%',
     backgroundColor: 'white',
     alignItems: 'center',
