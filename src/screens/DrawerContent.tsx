@@ -12,7 +12,8 @@ import {
   TouchableRipple,
   Switch,
 } from 'react-native-paper';
-import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Ionicons, MaterialIcons } from '@expo/vector-icons';
+import icon from '../../assets/icon.png';
 
 export function DrawerContent({ props, navigation }) {
   return (
@@ -21,14 +22,9 @@ export function DrawerContent({ props, navigation }) {
         <View style={styles.drawerContent}>
           <View style={styles.userInfoSection}>
             <View style={{ flexDirection: 'row', marginTop: 15 }}>
-              <Avatar.Image
-                source={{
-                  uri: 'https://api.adorable.io/avatars/50/abott@adorable.png',
-                }}
-                size={50}
-              />
+              <Avatar.Image source={icon} size={50} />
               <View style={{ marginLeft: 15, flexDirection: 'column' }}>
-                <Title style={styles.title}>John Doe</Title>
+                <Title style={styles.title}>Beta Tester</Title>
               </View>
             </View>
           </View>
@@ -56,7 +52,7 @@ export function DrawerContent({ props, navigation }) {
               )}
               label="More +"
               onPress={() => {
-                navigation.navigate('BookmarkScreen');
+                navigation.navigate('More');
               }}
             />
             <DrawerItem
@@ -75,9 +71,16 @@ export function DrawerContent({ props, navigation }) {
                 navigation.navigate('Loja');
               }}
             />
+            <DrawerItem
+              icon={({ color, size }) => <MaterialIcons name="rule" color={color} size={size} />}
+              label="Como Jogar"
+              onPress={() => {
+                navigation.navigate('Help');
+              }}
+            />
           </Drawer.Section>
           <Drawer.Section title="Preferences">
-            <TouchableRipple onPress={() => console.log('Preferences')}>
+            <TouchableRipple onPress={() => alert('Disponível na próxima Versão!')}>
               <View style={styles.preference}>
                 <Text>Dark Theme</Text>
                 <View pointerEvents="none">
@@ -90,9 +93,9 @@ export function DrawerContent({ props, navigation }) {
       </DrawerContentScrollView>
       <Drawer.Section style={styles.bottomDrawerSection}>
         <DrawerItem
-          icon={({ color, size }) => <Ionicons name="log-out-outline" color={color} size={size} />}
-          label="Sign Out"
-          onPress={() => console.log('pressed')}
+          icon={({ color, size }) => <Ionicons name="log-in-outline" color={color} size={size} />}
+          label="Log In"
+          onPress={() => alert('Disponível na próxima versão!')}
         />
       </Drawer.Section>
     </View>

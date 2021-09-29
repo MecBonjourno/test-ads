@@ -6,10 +6,10 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, Platform, Button, Pressable } from 'react-native';
 import { AdMobBanner, AdMobInterstitial, AdMobRewarded, PublisherBanner } from 'expo-ads-admob';
 import Jogo from './src/screens/Home';
-import Ads from './src/screens/Ads';
 import Loja from './src/screens/Loja';
+import Help from './src/screens/Help';
 import Settings from './src/screens/Settings';
-import DarkMode from './src/screens/DarkMode';
+import More from './src/screens/More';
 import Profile from './src/screens/Profile';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -30,58 +30,58 @@ const Tab = createBottomTabNavigator();
 
 const Drawer = createDrawerNavigator();
 
-function AppTabs() {
-  return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
+// function AppTabs() {
+//   return (
+//     <Tab.Navigator
+//       screenOptions={({ route }) => ({
+//         tabBarIcon: ({ focused, color, size }) => {
+//           let iconName;
 
-          if (route.name === 'Home') {
-            iconName = focused ? 'home' : 'home-outline';
-          } else if (route.name === 'Ajustes') {
-            iconName = focused ? 'settings-sharp' : 'settings-outline';
-          }
+//           if (route.name === 'Home') {
+//             iconName = focused ? 'home' : 'home-outline';
+//           } else if (route.name === 'Ajustes') {
+//             iconName = focused ? 'settings-sharp' : 'settings-outline';
+//           }
 
-          return <Ionicons name={iconName} size={size} color={color} />;
-        },
-        tabBarActiveTintColor: 'tomato',
-        tabBarInactiveTintColor: 'gray',
-        tabBarShowLabel: true,
-        tabBarActiveTintColor: '#000',
-        tabBarInactiveTintColor: '#a1a1a1',
-        tabBarStyle: {
-          position: 'absolute',
-          bottom: 25,
-          left: 20,
-          right: 20,
-          elevation: 0,
-          backgroundColor: '#f1f1f1',
-          borderRadius: 15,
-          height: 50,
-          paddingBottom: 0,
-          // padding: 20,
-          ...styles.shadow,
-        },
-      })}
-    >
-      <Tab.Screen
-        options={{
-          headerShown: false,
-        }}
-        name="Home"
-        component={Jogo}
-      />
-      <Tab.Screen
-        options={{
-          headerShown: false,
-        }}
-        name="Ajustes"
-        component={Settings}
-      />
-    </Tab.Navigator>
-  );
-}
+//           return <Ionicons name={iconName} size={size} color={color} />;
+//         },
+//         tabBarActiveTintColor: 'tomato',
+//         tabBarInactiveTintColor: 'gray',
+//         tabBarShowLabel: true,
+//         tabBarActiveTintColor: '#000',
+//         tabBarInactiveTintColor: '#a1a1a1',
+//         tabBarStyle: {
+//           position: 'absolute',
+//           bottom: 25,
+//           left: 20,
+//           right: 20,
+//           elevation: 0,
+//           backgroundColor: '#f1f1f1',
+//           borderRadius: 15,
+//           height: 50,
+//           paddingBottom: 0,
+//           // padding: 20,
+//           ...styles.shadow,
+//         },
+//       })}
+//     >
+//       <Tab.Screen
+//         options={{
+//           headerShown: false,
+//         }}
+//         name="Home"
+//         component={Jogo}
+//       />
+//       <Tab.Screen
+//         options={{
+//           headerShown: false,
+//         }}
+//         name="Ajustes"
+//         component={Settings}
+//       />
+//     </Tab.Navigator>
+//   );
+// }
 
 // function DrawerTabs() {
 //   return (
@@ -147,23 +147,11 @@ export default class App extends Component {
   render() {
     return (
       <NavigationContainer>
-        {/* <Stack.Navigator>
-          <Stack.Screen options={{ headerShown: false }} name="Landing" component={Landing} />
-          <Stack.Screen
-            options={{
-              headerStyle: { backgroundColor: 'transparent' },
-              headerTitle: () => <Text>Sueca!</Text>,
-              headerRight: () => (
-                <Button title="Open" onPress={() => OpenDrawer()} />
-              ),
-            }}
-            name="App"
-            component={AppTabs}
-          />
-        </Stack.Navigator> */}
         <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
           <Drawer.Screen name="Jogo" component={Jogo} />
           <Drawer.Screen name="Settings" component={Settings} />
+          <Drawer.Screen name="More" component={More} />
+          <Drawer.Screen name="Help" component={Help} />
           <Drawer.Screen name="Profile" component={Profile} />
           <Drawer.Screen name="Loja" component={Loja} />
         </Drawer.Navigator>
