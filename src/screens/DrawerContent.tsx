@@ -83,8 +83,11 @@ export function DrawerContent({ props, navigation }) {
             <TouchableRipple onPress={() => alert('Disponível na próxima Versão!')}>
               <View style={styles.preference}>
                 <Text>Dark Theme</Text>
-                <View pointerEvents="none">
+                {/* <View pointerEvents="none">
                   <Ionicons name="log-out-outline" color="black" size={20} />
+                </View> */}
+                <View pointerEvents="none">
+                  <Switch />
                 </View>
               </View>
             </TouchableRipple>
@@ -142,7 +145,8 @@ const styles = StyleSheet.create({
   preference: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: 12,
+    alignItems: 'center',
+    paddingVertical: 6,
     paddingHorizontal: 16,
   },
 });

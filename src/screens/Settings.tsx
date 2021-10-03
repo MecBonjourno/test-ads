@@ -8,11 +8,13 @@ import {
   useColorScheme,
   SafeAreaView,
   Pressable,
+  Dimensions,
 } from 'react-native';
 import AdBanner from '../components/AdBanner';
 
 export default function Settings({ navigation }) {
   const colorScheme = useColorScheme();
+  const { width, height } = Dimensions.get('window');
 
   const themeTextStyle = colorScheme === 'light' ? styles.lightThemeText : styles.darkThemeText;
   const themeContainerStyle =

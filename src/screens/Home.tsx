@@ -14,7 +14,6 @@ import AdBanner from '../components/AdBanner';
 import { LinearGradient } from 'expo-linear-gradient';
 import title from '../../assets/title.jpg';
 import { CARDS } from '../utils/CARDS';
-import { RULES } from '../utils/RULES';
 
 interface Carta {
   id: number;
