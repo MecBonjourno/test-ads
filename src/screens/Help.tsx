@@ -57,6 +57,7 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
                 Jogar Sueca é muito fácil, só precisa de dois itens: Álcool e o Sueca App. (É
@@ -74,6 +75,7 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
                 Com esses dois em mãos, "A Mesa", ou no caso o usuário do Sueca App puxa uma carta e
@@ -92,6 +94,7 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
                 Existem 13 regras diferentes para cada Set de Regras. Por enquanto temos somente o
@@ -116,9 +119,10 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
-                É meio auto explicativo né, mas segue o que tu deve fazer: Manda alguém tomar um
+                É meio auto explicativo né, mas segue o que você deve fazer: Manda alguém tomar um
                 único shot. (Pode ser quem tirou a carta também, o objetivo é beber)
               </Text>
             </View>
@@ -129,6 +133,7 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
                 2 - Distribua 2 (Dois) Shots.
@@ -139,10 +144,11 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
-                É meio auto explicativo né, mas segue o que tu deve fazer: Manda alguém tomar um
-                único shot. (Pode ser quem tirou a carta também, o objetivo é beber)
+                É meio auto explicativo também, mas: Manda duas pessoas beberem shot. Pode mandar 2
+                shots para uma única pessoa também, ta na regra!
               </Text>
             </View>
             <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
@@ -152,9 +158,10 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
-                3
+                3 - Distribua Três (3) shots
               </Text>
               <Text
                 style={{
@@ -162,33 +169,11 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
-                É meio auto explicativo né, mas segue o que tu deve fazer: Manda alguém tomar um
-                único shot. (Pode ser quem tirou a carta também, o objetivo é beber)
-              </Text>
-            </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
-              <Text
-                style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
-                  marginTop: '3%',
-                  color: '#f0efef',
-                }}
-              >
-                4
-              </Text>
-              <Text
-                style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
-                  marginTop: '3%',
-                  color: '#f0efef',
-                }}
-              >
-                É meio auto explicativo né, mas segue o que tu deve fazer: Manda alguém tomar um
-                único shot. (Pode ser quem tirou a carta também, o objetivo é beber)
+                Acho que você ja pegou á ideia né: Manda 3 pessoas beberem shots. Ou pode distribuir
+                de maneira que achar melhor, 2 pra um, 1 pra cada jogador, 3 pra um e assim vai.
               </Text>
             </View>
             <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
@@ -198,9 +183,10 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
-                5
+                4 - Jogo: Eu nunca
               </Text>
               <Text
                 style={{
@@ -208,33 +194,13 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
-                É meio auto explicativo né, mas segue o que tu deve fazer: Manda alguém tomar um
-                único shot. (Pode ser quem tirou a carta também, o objetivo é beber)
-              </Text>
-            </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
-              <Text
-                style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
-                  marginTop: '3%',
-                  color: '#f0efef',
-                }}
-              >
-                6
-              </Text>
-              <Text
-                style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
-                  marginTop: '3%',
-                  color: '#f0efef',
-                }}
-              >
-                É meio auto explicativo né, mas segue o que tu deve fazer: Manda alguém tomar um
-                único shot. (Pode ser quem tirou a carta também, o objetivo é beber)
+                O jogo do Eu Nunca é básico e muito bom pra cusar intriga, o jogador que tirou a
+                carta fala algo que ele nunca tenha feito, se alguém do jogo ja tiver feito, essa
+                pessoa bebe um shot. {'\n'}
+                {'\n'} Ex.: Eu nunca visitei o Rio de Janeiro. (Quem já visitou bebe!)
               </Text>
             </View>
             <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
@@ -244,9 +210,10 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
-                7
+                5 - Jogo: C ou S
               </Text>
               <Text
                 style={{
@@ -254,33 +221,13 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
-                É meio auto explicativo né, mas segue o que tu deve fazer: Manda alguém tomar um
-                único shot. (Pode ser quem tirou a carta também, o objetivo é beber)
-              </Text>
-            </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
-              <Text
-                style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
-                  marginTop: '3%',
-                  color: '#f0efef',
-                }}
-              >
-                8
-              </Text>
-              <Text
-                style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
-                  marginTop: '3%',
-                  color: '#f0efef',
-                }}
-              >
-                É meio auto explicativo né, mas segue o que tu deve fazer: Manda alguém tomar um
-                único shot. (Pode ser quem tirou a carta também, o objetivo é beber)
+                O Jogo do C ou S é fácil e rápido, o jogador que tirou a carta começa falando um
+                palavra qualquer e o jogador a direita tem que falar uma palavra que tenha sentindo
+                e concordância com o que foi dito. O único detalhe é: as palavras não podem começar
+                com as letras C ou S. Quem falar alguma palavra assim, bebe o shot da rodada.
               </Text>
             </View>
             <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
@@ -290,9 +237,10 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
-                9
+                6 - Passe para o banheiro
               </Text>
               <Text
                 style={{
@@ -300,33 +248,12 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
-                É meio auto explicativo né, mas segue o que tu deve fazer: Manda alguém tomar um
-                único shot. (Pode ser quem tirou a carta também, o objetivo é beber)
-              </Text>
-            </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
-              <Text
-                style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
-                  marginTop: '3%',
-                  color: '#f0efef',
-                }}
-              >
-                10
-              </Text>
-              <Text
-                style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
-                  marginTop: '3%',
-                  color: '#f0efef',
-                }}
-              >
-                É meio auto explicativo né, mas segue o que tu deve fazer: Manda alguém tomar um
-                único shot. (Pode ser quem tirou a carta também, o objetivo é beber)
+                A carta dá o poder de ir ao banheiro quando quiser, para o jogador que retira-la
+                óbvio. Os jogadores não podem ir ao banheiro durante o jogo, se for, já sabe né?!
+                Shot!
               </Text>
             </View>
             <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
@@ -336,43 +263,26 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
-                11
+                7 - Jogo: Pi
               </Text>
               <Text
                 style={{
                   fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
+                  fontSize: 26,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
-                É meio auto explicativo né, mas segue o que tu deve fazer: Manda alguém tomar um
-                único shot. (Pode ser quem tirou a carta também, o objetivo é beber)
-              </Text>
-            </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
-              <Text
-                style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
-                  marginTop: '3%',
-                  color: '#f0efef',
-                }}
-              >
-                12
-              </Text>
-              <Text
-                style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
-                  marginTop: '3%',
-                  color: '#f0efef',
-                }}
-              >
-                É meio auto explicativo né, mas segue o que tu deve fazer: Manda alguém tomar um
-                único shot. (Pode ser quem tirou a carta também, o objetivo é beber)
+                O jogo do Pi serve pra pegar os jogadores mais desavisados. O jogador que tirou a
+                carta escolhe um número de 2 á 9, e começa falando o número 1. O jogador seguinte a
+                direita fala o próxima número, ou seja, número 2. Caso o número da vez seja o número
+                que foi escolhido pelo jogador que tirou a carta, no lugar do número deve ser dito a
+                palavra: "Pi". {'\n'}
+                {'\n'}Ex.: Número 3: 1, 2, "pi", 4, 5, "pi", 7, 8, "pi", 10, 11, "pi", "pi", 14
               </Text>
             </View>
             <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
@@ -382,9 +292,10 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
-                13
+                8 - Invente uma regra
               </Text>
               <Text
                 style={{
@@ -392,10 +303,139 @@ export default function Help() {
                   fontSize: 30,
                   marginTop: '3%',
                   color: '#f0efef',
+                  textAlign: 'center',
                 }}
               >
-                É meio auto explicativo né, mas segue o que tu deve fazer: Manda alguém tomar um
-                único shot. (Pode ser quem tirou a carta também, o objetivo é beber)
+                O jogador que tirar esta carta pode inventar uma regra que será válida até a próxima
+                carta 8 ser tirada. As regras podem ser qualquer coisa e totalmente autoritárias se
+                quiser.{'\n'}
+                {'\n'} Ex.: A partir de agora quem tomar um shot com a mão esquerda vai ter que
+                tomar outro.
+              </Text>
+            </View>
+            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+              <Text
+                style={{
+                  fontFamily: 'Roboto_500Medium',
+                  fontSize: 30,
+                  marginTop: '3%',
+                  color: '#f0efef',
+                  textAlign: 'center',
+                }}
+              >
+                9 - Jogo: Dedinho
+              </Text>
+              <Text
+                style={{
+                  fontFamily: 'Roboto_500Medium',
+                  fontSize: 30,
+                  marginTop: '3%',
+                  color: '#f0efef',
+                  textAlign: 'center',
+                }}
+              >
+                O Jogo do dedinho é similar ao dorminhoco, quem tirar a carta 9 terá a oportunidade
+                de colocar o dedo mindinho parado na mesa (Caso estajam jogando sem uma mesa, o
+                local é no ombro ou coxa), e os outros jogadores devem fazer o mesmo, o ultimo
+                jogador que colocar o dedinho toma o shot da rodada.
+              </Text>
+            </View>
+            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+              <Text
+                style={{
+                  fontFamily: 'Roboto_500Medium',
+                  fontSize: 30,
+                  marginTop: '3%',
+                  color: '#f0efef',
+                  textAlign: 'center',
+                }}
+              >
+                10 - Palavra Proibida
+              </Text>
+              <Text
+                style={{
+                  fontFamily: 'Roboto_500Medium',
+                  fontSize: 30,
+                  marginTop: '3%',
+                  color: '#f0efef',
+                  textAlign: 'center',
+                }}
+              >
+                O jogador que tirar esta carta pode escolher a palavra proibida, toda a vez que a
+                palavra for dita por um jogador, este jogador bebe um shot. A palavra proibida é
+                valida até que a próxima carta 9 seja tirada.
+              </Text>
+            </View>
+            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+              <Text
+                style={{
+                  fontFamily: 'Roboto_500Medium',
+                  fontSize: 30,
+                  marginTop: '3%',
+                  color: '#f0efef',
+                  textAlign: 'center',
+                }}
+              >
+                11 - Homens bebem
+              </Text>
+              <Text
+                style={{
+                  fontFamily: 'Roboto_500Medium',
+                  fontSize: 30,
+                  marginTop: '3%',
+                  color: '#f0efef',
+                  textAlign: 'center',
+                }}
+              >
+                Todos os homens jogando bebem um shot essa rodada.
+              </Text>
+            </View>
+            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+              <Text
+                style={{
+                  fontFamily: 'Roboto_500Medium',
+                  fontSize: 30,
+                  marginTop: '3%',
+                  color: '#f0efef',
+                  textAlign: 'center',
+                }}
+              >
+                12 - Mulheres bebem
+              </Text>
+              <Text
+                style={{
+                  fontFamily: 'Roboto_500Medium',
+                  fontSize: 30,
+                  marginTop: '3%',
+                  color: '#f0efef',
+                  textAlign: 'center',
+                }}
+              >
+                Todas as mulheres jogando bebem um shot essa rodada.
+              </Text>
+            </View>
+            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+              <Text
+                style={{
+                  fontFamily: 'Roboto_500Medium',
+                  fontSize: 30,
+                  marginTop: '3%',
+                  color: '#f0efef',
+                  textAlign: 'center',
+                }}
+              >
+                13 - Todos os jogadores bebem
+              </Text>
+              <Text
+                style={{
+                  fontFamily: 'Roboto_500Medium',
+                  fontSize: 30,
+                  marginTop: '3%',
+                  color: '#f0efef',
+                  textAlign: 'center',
+                }}
+              >
+                Todos os jogadores bebem esta rodada.
               </Text>
             </View>
           </ScrollView>

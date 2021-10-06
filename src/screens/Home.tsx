@@ -12,7 +12,8 @@ import {
 import { useFonts, Roboto_400Regular, Roboto_500Medium } from '@expo-google-fonts/roboto';
 import AdBanner from '../components/AdBanner';
 import { LinearGradient } from 'expo-linear-gradient';
-import title from '../../assets/title.jpg';
+import title from '../../assets/logo.png';
+import logo from '../../assets/LogoWhite.png';
 import { CARDS } from '../utils/CARDS';
 
 interface Carta {
@@ -60,7 +61,8 @@ export default function HomeScreen({ navigation }) {
     return (
       <View style={[styles.container, themeContainerStyle]}>
         <LinearGradient colors={['#10700c', '#0a5a0e']} style={{ flex: 1 }}>
-          <Image style={styles.logo} source={title} />
+          {/* <Image style={styles.logo} source={title} /> */}
+          <Image style={styles.logo} source={logo} />
           {/* <Text style={styles.Title}>Sueca!</Text> */}
           {carta && (
             <View style={styles.Card}>
@@ -71,14 +73,26 @@ export default function HomeScreen({ navigation }) {
             </View>
           )}
           {!carta && (
-            <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+            <View
+              style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: '30%' }}
+            >
               <Pressable style={styles.Button} onPress={() => pickCard()}>
                 <Text style={styles.ButtonText}>Começar!</Text>
               </Pressable>
             </View>
           )}
           {carta && (
-            <Text style={{ fontFamily: 'Roboto_400Regular', fontSize: 26 }}>{carta.rule}</Text>
+            <Text
+              style={{
+                fontFamily: 'Roboto_500Medium',
+                fontSize: 26,
+                textAlign: 'center',
+                marginTop: '3%',
+                color: 'white',
+              }}
+            >
+              {carta.rule}
+            </Text>
           )}
           <View style={styles.BannerFooter}>
             <AdBanner />
@@ -126,11 +140,11 @@ const styles = StyleSheet.create({
   },
   Button: {
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     paddingVertical: 12,
     paddingHorizontal: 32,
     borderRadius: 15,
-    elevation: 3,
+    // elevation: 3,
     backgroundColor: 'white',
     width: '50%',
     shadowColor: '#002004',

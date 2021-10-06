@@ -13,6 +13,7 @@ export default function More() {
   return (
     <View style={[styles.container, themeContainerStyle]}>
       <Text style={[styles.text, themeTextStyle]}>Get To know our other apps</Text>
+      <Text style={[styles.text, themeTextStyle]}>Contador de Truco</Text>
       <View style={styles.BannerFooter}>
         <AdBanner />
       </View>
