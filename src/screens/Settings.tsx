@@ -10,6 +10,7 @@ import {
   Pressable,
   Dimensions,
 } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import AdBanner from '../components/AdBanner';
 
 export default function Settings({ navigation }) {
@@ -23,10 +24,14 @@ export default function Settings({ navigation }) {
   return (
     <View style={[styles.container, themeContainerStyle]}>
       <LinearGradient colors={['#10700c', '#0a5a0e']} style={{ flex: 1 }}>
-        <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Account</Text>
-        <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Color</Text>
-        <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Deck</Text>
-        <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Subscription</Text>
+        <ScrollView>
+          <Pressable style={styles.Line} onPress={() => alert('')}>
+            <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Account</Text>
+          </Pressable>
+          <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Color</Text>
+          <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Deck</Text>
+          <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Subscription</Text>
+        </ScrollView>
         <View style={styles.BannerFooter}>
           <AdBanner />
         </View>
@@ -84,5 +89,9 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
+  },
+  Line: {
+    backgroundColor: '#bebebe',
+    // transparency: 0.8,
   },
 });

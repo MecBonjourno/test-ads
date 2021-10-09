@@ -41,7 +41,7 @@ export function DrawerContent({ props, navigation }) {
             />
             <DrawerItem
               icon={({ color, size }) => <Ionicons name="person" color={color} size={size} />}
-              label="Profile"
+              label="Perfil"
               onPress={() => {
                 navigation.navigate('Profile');
               }}
@@ -50,7 +50,7 @@ export function DrawerContent({ props, navigation }) {
               icon={({ color, size }) => (
                 <Ionicons name="bookmark-outline" color={color} size={size} />
               )}
-              label="More +"
+              label="Mais +"
               onPress={() => {
                 navigation.navigate('More');
               }}
@@ -59,7 +59,7 @@ export function DrawerContent({ props, navigation }) {
               icon={({ color, size }) => (
                 <Ionicons name="settings-outline" color={color} size={size} />
               )}
-              label="Settings"
+              label="Configurações"
               onPress={() => {
                 navigation.navigate('Settings');
               }}
@@ -82,7 +82,7 @@ export function DrawerContent({ props, navigation }) {
           <Drawer.Section title="Preferences">
             <TouchableRipple onPress={() => alert('Disponível na próxima Versão!')}>
               <View style={styles.preference}>
-                <Text>Dark Theme</Text>
+                <Text>Tema Escuro</Text>
                 {/* <View pointerEvents="none">
                   <Ionicons name="log-out-outline" color="black" size={20} />
                 </View> */}
