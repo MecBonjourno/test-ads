@@ -8,6 +8,7 @@ import {
   useColorScheme,
   SafeAreaView,
   Pressable,
+  Dimensions,
 } from 'react-native';
 import { useFonts, Roboto_400Regular, Roboto_500Medium } from '@expo-google-fonts/roboto';
 import AdBanner from '../components/AdBanner';
@@ -22,6 +23,7 @@ interface Carta {
   suit: string;
   name: string;
   rule: string;
+  imgURL: string;
 }
 
 export default function HomeScreen({ navigation }) {
@@ -30,7 +32,7 @@ export default function HomeScreen({ navigation }) {
     Roboto_500Medium,
   });
   const colorScheme = useColorScheme();
-
+  const { width, height } = Dimensions.get('window');
   const themeTextStyle = colorScheme === 'light' ? styles.lightThemeText : styles.darkThemeText;
   const themeContainerStyle =
     colorScheme === 'light' ? styles.lightContainer : styles.darkContainer;
@@ -50,6 +52,7 @@ export default function HomeScreen({ navigation }) {
     setCarta(getOneCard);
     removeCard();
   }
+  const foto = carta?.imgURL;
 
   if (!fontsLoaded) {
     return (
@@ -63,12 +66,13 @@ export default function HomeScreen({ navigation }) {
         <LinearGradient colors={['#10700c', '#0a5a0e']} style={{ flex: 1 }}>
           {/* <Image style={styles.logo} source={title} /> */}
           <Image style={styles.logo} source={logo} />
-          {/* <Text style={styles.Title}>Sueca!</Text> */}
           {carta && (
             <View style={styles.Card}>
               <Pressable onPress={() => pickCard()}>
-                <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>{carta.name}</Text>
-                <Text style={{ fontFamily: 'Roboto_400Regular', fontSize: 40 }}>{carta.rule}</Text>
+                <Image
+                  style={{ flex: 1, width, height, resizeMode: 'contain' }}
+                  source={carta.imgURL}
+                />
               </Pressable>
             </View>
           )}
@@ -87,7 +91,7 @@ export default function HomeScreen({ navigation }) {
                 fontFamily: 'Roboto_500Medium',
                 fontSize: 26,
                 textAlign: 'center',
-                marginTop: '3%',
+                marginTop: '2%',
                 color: 'white',
               }}
             >
@@ -109,18 +113,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  lightContainer: {
-    backgroundColor: '#d0d0c0',
-  },
-  darkContainer: {
-    backgroundColor: '#0a5a0e',
-  },
-  lightThemeText: {
-    color: '#242c40',
-  },
-  darkThemeText: {
-    color: '#d3d3d2',
-  },
   Title: {
     textAlign: 'center',
     fontFamily: 'Roboto_500Medium',
@@ -129,8 +121,9 @@ const styles = StyleSheet.create({
   },
   BannerFooter: {
     flex: 1,
+    width: '100%',
     justifyContent: 'flex-end',
-    paddingBottom: '5%',
+    paddingBottom: '6%',
   },
   logo: {
     marginVertical: '2,5%',
@@ -140,11 +133,9 @@ const styles = StyleSheet.create({
   },
   Button: {
     alignItems: 'center',
-    // justifyContent: 'center',
     paddingVertical: 12,
     paddingHorizontal: 32,
     borderRadius: 15,
-    // elevation: 3,
     backgroundColor: 'white',
     width: '50%',
     shadowColor: '#002004',
@@ -164,11 +155,9 @@ const styles = StyleSheet.create({
   },
   Card: {
     borderRadius: 25,
-    marginHorizontal: '3%',
     marginBottom: '4%',
     marginTop: '2,5%',
     height: '65%',
-    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#002004',

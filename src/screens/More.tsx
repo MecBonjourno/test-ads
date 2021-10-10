@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, StyleSheet, View, useColorScheme } from 'react-native';
 import { StatusBar } from 'expo-status-bar'; // automatically switches bar style based on theme!
 import AdBanner from '../components/AdBanner';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function More() {
   const colorScheme = useColorScheme();
@@ -12,11 +13,15 @@ export default function More() {
 
   return (
     <View style={[styles.container, themeContainerStyle]}>
-      <Text style={[styles.text, themeTextStyle]}>Get To know our other apps</Text>
-      <Text style={[styles.text, themeTextStyle]}>Contador de Truco</Text>
-      <View style={styles.BannerFooter}>
-        <AdBanner />
-      </View>
+      <LinearGradient colors={['#10700c', '#0a5a0e']} style={{ flex: 1 }}>
+        <Text style={[styles.text, themeTextStyle]}>
+          Conheça outros Apps desenvolvidos pela Simple Life:
+        </Text>
+        <Text style={[styles.text, themeTextStyle]}>Contador de Truco</Text>
+        <View style={styles.BannerFooter}>
+          <AdBanner />
+        </View>
+      </LinearGradient>
     </View>
   );
 }
