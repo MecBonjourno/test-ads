@@ -10,8 +10,8 @@ export default function Profile({ navigation }) {
     colorScheme === 'light' ? styles.lightContainer : styles.darkContainer;
 
   return (
-    <View style={[styles.LandingContainer, themeContainerStyle]}>
-      <Text style={[styles.text, themeTextStyle]}>Profile</Text>
+    <View style={styles.LandingContainer}>
+      <Text style={{}}>Perfil</Text>
       <Button title="Jogar!" onPress={() => navigation.navigate('App')} />
       <View style={styles.BannerFooter}>
         <AdBanner />
@@ -26,22 +26,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  lightContainer: {
-    backgroundColor: '#d0d0c0',
-  },
-  darkContainer: {
-    backgroundColor: '#242c40',
-  },
-  lightThemeText: {
-    color: '#242c40',
-  },
-  darkThemeText: {
-    color: '#d0d0c0',
-  },
   BannerFooter: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
+    flex: 1,
+    justifyContent: 'flex-end',
+    paddingBottom: '5%',
   },
 });

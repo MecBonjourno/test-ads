@@ -5,14 +5,10 @@ import { ScrollView } from 'react-native-gesture-handler';
 import AdBanner from '../components/AdBanner';
 
 export default function Settings({ navigation }) {
-  const colorScheme = useColorScheme();
   const { width, height } = Dimensions.get('window');
-  const themeTextStyle = colorScheme === 'light' ? styles.lightThemeText : styles.darkThemeText;
-  const themeContainerStyle =
-    colorScheme === 'light' ? styles.lightContainer : styles.darkContainer;
 
   return (
-    <View style={[styles.container, themeContainerStyle]}>
+    <View style={styles.container}>
       <ScrollView>
         <Pressable style={styles.Line} onPress={() => alert('Próxima Atualização!')}>
           <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Conta</Text>
@@ -79,10 +75,9 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   BannerFooter: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
+    flex: 1,
+    justifyContent: 'flex-end',
+    paddingBottom: '5%',
   },
   Line: {
     padding: 6,

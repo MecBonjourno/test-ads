@@ -1,19 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Button,
-  Image,
-  Text,
-  View,
-  StyleSheet,
-  useColorScheme,
-  SafeAreaView,
-  Pressable,
-  Dimensions,
-} from 'react-native';
+import { Image, Text, View, StyleSheet, useColorScheme, Pressable, Dimensions } from 'react-native';
 import { useFonts, Roboto_400Regular, Roboto_500Medium } from '@expo-google-fonts/roboto';
 import AdBanner from '../components/AdBanner';
 import { LinearGradient } from 'expo-linear-gradient';
-import title from '../../assets/logo.png';
 import logo from '../../assets/LogoWhite.png';
 import { CARDS } from '../utils/CARDS';
 
@@ -51,8 +40,14 @@ export default function HomeScreen({ navigation }) {
     const getOneCard = deck[Math.floor(Math.random() * deck.length)];
     setCarta(getOneCard);
     removeCard();
+    if (deck.length === 0) {
+      console.log('é isso memo');
+    }
   }
-  const foto = carta?.imgURL;
+
+  function restartGame() {
+    setDeck(CARDS.map((card: any) => card));
+  }
 
   if (!fontsLoaded) {
     return (
@@ -64,10 +59,10 @@ export default function HomeScreen({ navigation }) {
     return (
       <View style={[styles.container, themeContainerStyle]}>
         <LinearGradient colors={['#10700c', '#0a5a0e']} style={{ flex: 1 }}>
-          {/* <Image style={styles.logo} source={title} /> */}
           <Image style={styles.logo} source={logo} />
           {carta && (
             <View style={styles.Card}>
+              <Text style={styles.NumberOfCards}>{deck.length}</Text>
               <Pressable onPress={() => pickCard()}>
                 <Image
                   style={{ flex: 1, width, height, resizeMode: 'contain' }}
@@ -76,12 +71,21 @@ export default function HomeScreen({ navigation }) {
               </Pressable>
             </View>
           )}
-          {!carta && (
+          {!carta && deck.length > 0 && (
             <View
               style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: '30%' }}
             >
               <Pressable style={styles.Button} onPress={() => pickCard()}>
                 <Text style={styles.ButtonText}>Começar!</Text>
+              </Pressable>
+            </View>
+          )}
+          {deck.length === 0 && (
+            <View
+              style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: '30%' }}
+            >
+              <Pressable style={styles.Button} onPress={() => restartGame()}>
+                <Text style={styles.ButtonText}>Reiniciar o Jogo!</Text>
               </Pressable>
             </View>
           )}
@@ -167,5 +171,10 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 1,
     shadowRadius: 3.5,
+  },
+  NumberOfCards: {
+    marginBottom: '1%',
+    color: 'white',
+    justifyContent: 'flex-end',
   },
 });

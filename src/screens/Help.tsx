@@ -10,7 +10,13 @@ import {
   ScrollView,
   Dimensions,
 } from 'react-native';
-import { useFonts, Roboto_400Regular, Roboto_500Medium } from '@expo-google-fonts/roboto';
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_500Medium,
+  Roboto_500Medium_Italic,
+  Roboto_700Bold,
+} from '@expo-google-fonts/roboto';
 import AdBanner from '../components/AdBanner';
 import Cards from '../../assets/cards.png';
 import Drink from '../../assets/drink.png';
@@ -20,6 +26,8 @@ export default function Help() {
   let [fontsLoaded] = useFonts({
     Roboto_400Regular,
     Roboto_500Medium,
+    Roboto_700Bold,
+    Roboto_500Medium_Italic,
   });
   const colorScheme = useColorScheme();
   const { width, height } = Dimensions.get('window');
@@ -102,16 +110,25 @@ export default function Help() {
                 13 regras regulares:
               </Text>
             </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+            <View
+              style={{
+                width,
+                height,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '-1%',
+                paddingHorizontal: 15,
+              }}
+            >
               <Text
                 style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
+                  fontFamily: 'Roboto_500Medium_Italic',
+                  fontSize: 32,
                   marginTop: '3%',
                   color: '#f0efef',
                 }}
               >
-                1 - Distribua 1 (Um) Shot.
+                1 - Distribua 1 Shot.
               </Text>
               <Text
                 style={{
@@ -126,17 +143,26 @@ export default function Help() {
                 único shot. (Pode ser quem tirou a carta também, o objetivo é beber)
               </Text>
             </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+            <View
+              style={{
+                width,
+                height,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '-1%',
+                paddingHorizontal: 15,
+              }}
+            >
               <Text
                 style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
+                  fontFamily: 'Roboto_500Medium_Italic',
+                  fontSize: 32,
                   marginTop: '3%',
                   color: '#f0efef',
                   textAlign: 'center',
                 }}
               >
-                2 - Distribua 2 (Dois) Shots.
+                2 - Distribua 2 Shots.
               </Text>
               <Text
                 style={{
@@ -151,17 +177,26 @@ export default function Help() {
                 shots para uma única pessoa também, ta na regra!
               </Text>
             </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+            <View
+              style={{
+                width,
+                height,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '-1%',
+                paddingHorizontal: 15,
+              }}
+            >
               <Text
                 style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
+                  fontFamily: 'Roboto_500Medium_Italic',
+                  fontSize: 32,
                   marginTop: '3%',
                   color: '#f0efef',
                   textAlign: 'center',
                 }}
               >
-                3 - Distribua Três (3) shots
+                3 - Distribua 3 shots
               </Text>
               <Text
                 style={{
@@ -176,11 +211,20 @@ export default function Help() {
                 de maneira que achar melhor, 2 pra um, 1 pra cada jogador, 3 pra um e assim vai.
               </Text>
             </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+            <View
+              style={{
+                width,
+                height,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '-1%',
+                paddingHorizontal: 15,
+              }}
+            >
               <Text
                 style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
+                  fontFamily: 'Roboto_500Medium_Italic',
+                  fontSize: 32,
                   marginTop: '3%',
                   color: '#f0efef',
                   textAlign: 'center',
@@ -203,11 +247,20 @@ export default function Help() {
                 {'\n'} Ex.: Eu nunca visitei o Rio de Janeiro. (Quem já visitou bebe!)
               </Text>
             </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+            <View
+              style={{
+                width,
+                height,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '-1%',
+                paddingHorizontal: 15,
+              }}
+            >
               <Text
                 style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
+                  fontFamily: 'Roboto_500Medium_Italic',
+                  fontSize: 32,
                   marginTop: '3%',
                   color: '#f0efef',
                   textAlign: 'center',
@@ -230,11 +283,20 @@ export default function Help() {
                 com as letras C ou S. Quem falar alguma palavra assim, bebe o shot da rodada.
               </Text>
             </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+            <View
+              style={{
+                width,
+                height,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '-1%',
+                paddingHorizontal: 15,
+              }}
+            >
               <Text
                 style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
+                  fontFamily: 'Roboto_500Medium_Italic',
+                  fontSize: 32,
                   marginTop: '3%',
                   color: '#f0efef',
                   textAlign: 'center',
@@ -256,11 +318,20 @@ export default function Help() {
                 Shot!
               </Text>
             </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+            <View
+              style={{
+                width,
+                height,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '-1%',
+                paddingHorizontal: 15,
+              }}
+            >
               <Text
                 style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
+                  fontFamily: 'Roboto_500Medium_Italic',
+                  fontSize: 32,
                   marginTop: '3%',
                   color: '#f0efef',
                   textAlign: 'center',
@@ -285,11 +356,20 @@ export default function Help() {
                 {'\n'}Ex.: Número 3: 1, 2, "pi", 4, 5, "pi", 7, 8, "pi", 10, 11, "pi", "pi", 14
               </Text>
             </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+            <View
+              style={{
+                width,
+                height,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '-1%',
+                paddingHorizontal: 15,
+              }}
+            >
               <Text
                 style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
+                  fontFamily: 'Roboto_500Medium_Italic',
+                  fontSize: 32,
                   marginTop: '3%',
                   color: '#f0efef',
                   textAlign: 'center',
@@ -313,11 +393,20 @@ export default function Help() {
                 tomar outro.
               </Text>
             </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+            <View
+              style={{
+                width,
+                height,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '-1%',
+                paddingHorizontal: 15,
+              }}
+            >
               <Text
                 style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
+                  fontFamily: 'Roboto_500Medium_Italic',
+                  fontSize: 32,
                   marginTop: '3%',
                   color: '#f0efef',
                   textAlign: 'center',
@@ -340,11 +429,20 @@ export default function Help() {
                 jogador que colocar o dedinho toma o shot da rodada.
               </Text>
             </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+            <View
+              style={{
+                width,
+                height,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '-1%',
+                paddingHorizontal: 15,
+              }}
+            >
               <Text
                 style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
+                  fontFamily: 'Roboto_500Medium_Italic',
+                  fontSize: 32,
                   marginTop: '3%',
                   color: '#f0efef',
                   textAlign: 'center',
@@ -363,14 +461,26 @@ export default function Help() {
               >
                 O jogador que tirar esta carta pode escolher a palavra proibida, toda a vez que a
                 palavra for dita por um jogador, este jogador bebe um shot. A palavra proibida é
-                valida até que a próxima carta 9 seja tirada.
+                valida até que a próxima carta 10 seja tirada.
+                {'\n'}
+                Ex.: A palavra é "Toma", quando alguém falar a palavra independente do momento, toma
+                shot.
               </Text>
             </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+            <View
+              style={{
+                width,
+                height,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '-1%',
+                paddingHorizontal: 15,
+              }}
+            >
               <Text
                 style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
+                  fontFamily: 'Roboto_500Medium_Italic',
+                  fontSize: 32,
                   marginTop: '3%',
                   color: '#f0efef',
                   textAlign: 'center',
@@ -390,11 +500,20 @@ export default function Help() {
                 Todos os homens jogando bebem um shot essa rodada.
               </Text>
             </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+            <View
+              style={{
+                width,
+                height,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '-1%',
+                paddingHorizontal: 15,
+              }}
+            >
               <Text
                 style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
+                  fontFamily: 'Roboto_500Medium_Italic',
+                  fontSize: 32,
                   marginTop: '3%',
                   color: '#f0efef',
                   textAlign: 'center',
@@ -414,11 +533,20 @@ export default function Help() {
                 Todas as mulheres jogando bebem um shot essa rodada.
               </Text>
             </View>
-            <View style={{ width, height, alignItems: 'center', paddingHorizontal: 15 }}>
+            <View
+              style={{
+                width,
+                height,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '-1%',
+                paddingHorizontal: 15,
+              }}
+            >
               <Text
                 style={{
-                  fontFamily: 'Roboto_500Medium',
-                  fontSize: 30,
+                  fontFamily: 'Roboto_500Medium_Italic',
+                  fontSize: 32,
                   marginTop: '3%',
                   color: '#f0efef',
                   textAlign: 'center',

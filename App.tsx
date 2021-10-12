@@ -1,7 +1,5 @@
 // @ts-ignore
 //@ts-nocheck
-import { StatusBar } from 'expo-status-bar';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Platform, Button, Pressable } from 'react-native';
 import { AdMobBanner, AdMobInterstitial, AdMobRewarded, PublisherBanner } from 'expo-ads-admob';
@@ -12,8 +10,6 @@ import Settings from './src/screens/Settings';
 import More from './src/screens/More';
 import Profile from './src/screens/Profile';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { DrawerContent } from './src/screens/DrawerContent';
 
@@ -24,78 +20,8 @@ import { DrawerContent } from './src/screens/DrawerContent';
 //TEST APP OPEN: ca-app-pub-3940256099942544/3419835294
 //TEST BANNER: ca-app-pub-3940256099942544/6300978111
 
-const Stack = createNativeStackNavigator();
-
-const Tab = createBottomTabNavigator();
-
 const Drawer = createDrawerNavigator();
 
-// function AppTabs() {
-//   return (
-//     <Tab.Navigator
-//       screenOptions={({ route }) => ({
-//         tabBarIcon: ({ focused, color, size }) => {
-//           let iconName;
-
-//           if (route.name === 'Home') {
-//             iconName = focused ? 'home' : 'home-outline';
-//           } else if (route.name === 'Ajustes') {
-//             iconName = focused ? 'settings-sharp' : 'settings-outline';
-//           }
-
-//           return <Ionicons name={iconName} size={size} color={color} />;
-//         },
-//         tabBarActiveTintColor: 'tomato',
-//         tabBarInactiveTintColor: 'gray',
-//         tabBarShowLabel: true,
-//         tabBarActiveTintColor: '#000',
-//         tabBarInactiveTintColor: '#a1a1a1',
-//         tabBarStyle: {
-//           position: 'absolute',
-//           bottom: 25,
-//           left: 20,
-//           right: 20,
-//           elevation: 0,
-//           backgroundColor: '#f1f1f1',
-//           borderRadius: 15,
-//           height: 50,
-//           paddingBottom: 0,
-//           // padding: 20,
-//           ...styles.shadow,
-//         },
-//       })}
-//     >
-//       <Tab.Screen
-//         options={{
-//           headerShown: false,
-//         }}
-//         name="Home"
-//         component={Jogo}
-//       />
-//       <Tab.Screen
-//         options={{
-//           headerShown: false,
-//         }}
-//         name="Ajustes"
-//         component={Settings}
-//       />
-//     </Tab.Navigator>
-//   );
-// }
-
-// function DrawerTabs() {
-//   return (
-//     <Drawer.Navigator initialRouteName="Home">
-//       <Drawer.Screen name="Home" component={HomeScreen} />
-//       <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-//     </Drawer.Navigator>
-//   );
-// }
-
-// function OpenDrawer({ navigation }) {
-//   console.log('OpenDrawer');
-//   navigation.toggleDrawer();
-// }
 export default class App extends Component {
   state = {
     disableInterstitialBtn: false,
@@ -159,21 +85,3 @@ export default class App extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  shadow: {
-    shadowColor: '#302b3f',
-    shadowOffset: {
-      width: 0,
-      height: 0,
-    },
-    shadowOpacity: 0.35,
-    shadowRadius: 3.5,
-  },
-});

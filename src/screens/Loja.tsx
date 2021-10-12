@@ -27,7 +27,7 @@ export default function Loja({ navigation }) {
           )}
           numColumns={2}
         />
-        <View style={styles.AndMore}>
+        <View>
           <Text>And More to come</Text>
         </View>
         <View style={styles.BannerFooter}>
