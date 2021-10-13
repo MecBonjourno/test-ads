@@ -1,52 +1,67 @@
-import React, { useEffect, useState } from 'react';
-import { Image, Text, View, StyleSheet, useColorScheme, Pressable, Dimensions } from 'react-native';
-import { useFonts, Roboto_400Regular, Roboto_500Medium } from '@expo-google-fonts/roboto';
-import AdBanner from '../components/AdBanner';
-import { LinearGradient } from 'expo-linear-gradient';
-import logo from '../../assets/LogoWhite.png';
-import { CARDS } from '../utils/CARDS';
+import React, { useEffect, useState } from 'react'
+import {
+  Image,
+  Text,
+  View,
+  StyleSheet,
+  useColorScheme,
+  Pressable,
+  Dimensions,
+} from 'react-native'
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_500Medium,
+  Roboto_700Bold,
+} from '@expo-google-fonts/roboto'
+import AdBanner from '../components/AdBanner'
+import { LinearGradient } from 'expo-linear-gradient'
+import logo from '../../assets/LogoWhite.png'
+import { CARDS } from '../utils/CARDS'
 
 interface Carta {
-  id: number;
-  value: number;
-  suit: string;
-  name: string;
-  rule: string;
-  imgURL: string;
+  id: number
+  value: number
+  suit: string
+  name: string
+  rule: string
+  imgURL: string
 }
 
 export default function HomeScreen({ navigation }) {
   let [fontsLoaded] = useFonts({
     Roboto_400Regular,
     Roboto_500Medium,
-  });
-  const colorScheme = useColorScheme();
-  const { width, height } = Dimensions.get('window');
-  const themeTextStyle = colorScheme === 'light' ? styles.lightThemeText : styles.darkThemeText;
+    Roboto_700Bold,
+  })
+  const colorScheme = useColorScheme()
+  const { width, height } = Dimensions.get('window')
+  const themeTextStyle =
+    colorScheme === 'light' ? styles.lightThemeText : styles.darkThemeText
   const themeContainerStyle =
-    colorScheme === 'light' ? styles.lightContainer : styles.darkContainer;
+    colorScheme === 'light' ? styles.lightContainer : styles.darkContainer
 
-  const [carta, setCarta] = useState<Carta>();
-  const [deck, setDeck] = useState(CARDS.map((card: any) => card));
+  const [carta, setCarta] = useState<Carta>()
+  const [deck, setDeck] = useState(CARDS.map((card: any) => card))
 
   function removeCard() {
-    const index = deck.indexOf(carta);
+    const index = deck.indexOf(carta)
     if (index > -1) {
-      deck.splice(index, 1);
+      deck.splice(index, 1)
     }
   }
 
   function pickCard() {
-    const getOneCard = deck[Math.floor(Math.random() * deck.length)];
-    setCarta(getOneCard);
-    removeCard();
+    const getOneCard = deck[Math.floor(Math.random() * deck.length)]
+    setCarta(getOneCard)
+    removeCard()
     if (deck.length === 0) {
-      console.log('é isso memo');
+      console.log('é isso memo')
     }
   }
 
   function restartGame() {
-    setDeck(CARDS.map((card: any) => card));
+    setDeck(CARDS.map((card: any) => card))
   }
 
   if (!fontsLoaded) {
@@ -54,7 +69,7 @@ export default function HomeScreen({ navigation }) {
       <View>
         <Text>Loading...</Text>
       </View>
-    );
+    )
   } else {
     return (
       <View style={[styles.container, themeContainerStyle]}>
@@ -73,8 +88,12 @@ export default function HomeScreen({ navigation }) {
           )}
           {!carta && deck.length > 0 && (
             <View
-              style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: '30%' }}
-            >
+              style={{
+                flex: 1,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '30%',
+              }}>
               <Pressable style={styles.Button} onPress={() => pickCard()}>
                 <Text style={styles.ButtonText}>Começar!</Text>
               </Pressable>
@@ -82,8 +101,12 @@ export default function HomeScreen({ navigation }) {
           )}
           {deck.length === 0 && (
             <View
-              style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: '30%' }}
-            >
+              style={{
+                flex: 1,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '30%',
+              }}>
               <Pressable style={styles.Button} onPress={() => restartGame()}>
                 <Text style={styles.ButtonText}>Reiniciar o Jogo!</Text>
               </Pressable>
@@ -97,8 +120,7 @@ export default function HomeScreen({ navigation }) {
                 textAlign: 'center',
                 marginTop: '2%',
                 color: 'white',
-              }}
-            >
+              }}>
               {carta.rule}
             </Text>
           )}
@@ -107,7 +129,7 @@ export default function HomeScreen({ navigation }) {
           </View>
         </LinearGradient>
       </View>
-    );
+    )
   }
 }
 
@@ -156,6 +178,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     letterSpacing: 0.25,
     color: 'black',
+    textAlign: 'center',
   },
   Card: {
     borderRadius: 25,
@@ -177,4 +200,4 @@ const styles = StyleSheet.create({
     color: 'white',
     justifyContent: 'flex-end',
   },
-});
+})

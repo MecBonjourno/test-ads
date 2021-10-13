@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 26,
     fontWeight: 'bold',
+    marginTop: '10%',
   },
   caption: {
     fontSize: 14,
