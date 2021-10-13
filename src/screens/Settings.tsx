@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Text, View, StyleSheet, useColorScheme, Pressable, Dimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import AdBanner from '../components/AdBanner';
+import { Entypo } from '@expo/vector-icons';
 
 export default function Settings({ navigation }) {
   const { width, height } = Dimensions.get('window');
@@ -10,8 +11,10 @@ export default function Settings({ navigation }) {
   return (
     <View style={styles.container}>
       <ScrollView>
+        <View style={styles.Spacer}></View>
         <Pressable style={styles.Line} onPress={() => alert('Próxima Atualização!')}>
           <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Conta</Text>
+          <Entypo name="chevron-right" size={24} color="black" />
         </Pressable>
         <Pressable style={styles.Line} onPress={() => alert('Próxima Atualização!')}>
           <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 40 }}>Cor de Fundo</Text>
@@ -45,6 +48,11 @@ const styles = StyleSheet.create({
   },
   darkThemeText: {
     color: '#d3d3d2',
+  },
+  Spacer: {
+    height: '10%',
+    borderBottomColor: 'black',
+    borderBottomWidth: 1,
   },
   Title: {
     textAlign: 'center',

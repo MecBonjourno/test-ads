@@ -50,12 +50,12 @@ export default function More() {
                 <View style={styles.Icon}>
                   <Image style={styles.ImageIcon} source={blur} />
 
-                  <Text style={styles.AppName}>Contador de Truco</Text>
+                  <Text style={styles.AppName}>Truco</Text>
                 </View>
                 <View style={styles.Icon}>
                   <Image style={styles.ImageIcon} source={blur} />
 
-                  <Text style={styles.AppName}>Contador de Truco</Text>
+                  <Text style={styles.AppName}>Money Saver</Text>
                 </View>
               </View>
             </View>
